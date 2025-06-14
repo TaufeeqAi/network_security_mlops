@@ -101,8 +101,8 @@ class TrainingPipeline:
             data_transformation_artifact=Self.start_data_transformation(data_validation_artifact=data_validation_artifact)
             model_training_artifact=Self.start_model_training(data_transformation_artifact=data_transformation_artifact)
             
-            Self.sync_artifact_dir_to_s3
-            Self.sync_saved_model_dir_to_s3
+            Self.sync_artifact_dir_to_s3()
+            Self.sync_saved_model_dir_to_s3()
             
             return model_training_artifact
         except Exception as e:
